@@ -1,5 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
+    include SessionsHelper
     identified_by :message_user
 
     def connect
