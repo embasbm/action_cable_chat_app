@@ -14,4 +14,9 @@ class MessageTest < ActiveSupport::TestCase
     @message.content = " "
     assert !@message.valid?
   end
+
+  test ".mentions Returns a list of users @mentioned in message content" do
+    @message.content += ' @' + users(:example).username
+    assert_not @message.mentions.empty?, [users(:example)]
+  end
 end
