@@ -22,7 +22,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post users_url,
            params: { user: { username: "test", password: "password",
-                             password_confirmation: "password" } }
+                             password_confirmation: "password", dialect_id: dialects(:yoda).id } }
     end
     assert is_logged_in?
     assert_redirected_to messages_url

@@ -14,6 +14,9 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
 
+    <%= f.label :dialect, "Dialect" %>
+    <%= f.collection_select :dialect_id, Dialect.all, :id, :name, prompt: true %>
+
     <%= f.submit "Sign up" %>
   <% end %>
   <ul class="session-links">
