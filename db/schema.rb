@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320115422) do
+ActiveRecord::Schema.define(version: 20170320120637) do
 
   create_table "dialects", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170320115422) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "dialect_id"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
