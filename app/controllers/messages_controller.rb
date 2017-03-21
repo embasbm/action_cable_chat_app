@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   before_action :get_messages
 
   def index
+    @logged_in_users = User.online
   end
 
   def create

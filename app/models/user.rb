@@ -7,4 +7,7 @@ class User < ApplicationRecord
                        length: { maximum: 15 }
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
+
+  scope :online, lambda{ where("updated_at > ?", 10.minutes.ago) }
+
 end
