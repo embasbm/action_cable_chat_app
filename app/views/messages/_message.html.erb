@@ -3,6 +3,6 @@
     <%= message.user.username %> (<%= message.created_at.strftime("%I:%M%p") %>):
   </div>
   <div class="message-content">
-    <%= sanitize markdown_to_html(message.content) %>
+    <%= image_tag message.user.dialect.icon.url(:thumb) %> <%= sanitize markdown_to_html(message.content) %>
   </div>
 </div>
