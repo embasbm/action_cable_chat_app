@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719235623) do
+ActiveRecord::Schema.define(version: 20170321082752) do
+
+  create_table "dialects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "key_name"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text     "content"
@@ -25,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160719235623) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "dialect_id"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

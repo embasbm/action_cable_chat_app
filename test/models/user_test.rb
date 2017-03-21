@@ -4,8 +4,9 @@ class UserTest < ActiveSupport::TestCase
 
 
   def setup
+    @dialect = dialects(:yoda)
     @user = User.new(username: "example_user", password: "password",
-                     password_confirmation: "password")
+                     password_confirmation: "password", dialect_id: @dialect.id)
   end
 
   test "should be valid" do

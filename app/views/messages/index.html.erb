@@ -2,3 +2,10 @@
   <%= render 'messages' %>
   <%= render 'message_form' %>
 </div>
+<div class="sidebar">
+  <% @logged_in_users.each do |user| %>
+    <div class="row">
+      <%= user.username %>
+    </div>
+  <% end %>
+</div>
